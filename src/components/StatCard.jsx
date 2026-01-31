@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
 
-export default function StatCard({ label, value }) {
+export default function StatCard({ title, value }) {
   return (
     <motion.div
-      className="card text-center shadow-sm"
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.4 }}
-      viewport={{ once: true }}
+      whileHover={{ scale: 1.05 }}
+      className="card shadow-sm"
     >
       <div className="card-body">
-        <h2 className="fw-bold">{value}</h2>
-        <p className="text-muted">{label}</p>
+        <h6 className="text-muted">{title}</h6>
+        <h3 className="fw-bold">{value}</h3>
       </div>
     </motion.div>
   );
